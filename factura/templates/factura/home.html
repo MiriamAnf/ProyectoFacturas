@@ -1,0 +1,27 @@
+{% extends "factura/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div 
+    id="jumbotron"
+    class="jumbotron p-4 p-md-5 text-white rounded bg-dark" style="margin-top: 6px">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">DelaCasada S.L.</h1>
+      <p class="lead my-3">Recetas tradicionales que seguirán llegando a tu hogar con la misma calidad que en sus inicios.<br><strong>El placer de celebrar.</strong></p>
+    </div>
+  </div>
+
+  <div class="row">
+    
+    {% for f in facturas %}
+    <div class="col-lg-4">
+      <h2> {{f.num_receipt}}-{{ f.pk}} </h2>
+      <p> {{f.costumer_name}} </p>
+      <p> {{f.date_of_issue}} </p>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

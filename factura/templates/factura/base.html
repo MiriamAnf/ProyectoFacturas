@@ -1,0 +1,27 @@
+{% load static %}<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>
+            {% block title %}
+                DelaCasada S.L.
+            {% endblock title %}
+        </title>
+        <link rel="stylesheet" href="{% static 'factura/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'factura/custom.css' %}">
+    </head>
+    <body>
+
+        <div class="container">
+
+        <h2>DelaCasada S.L.</h2>
+        {% block content %}
+
+        {% endblock %}
+        
+        {% include "factura/footer.html" %}
+        </div>
+
+    </body>
+</html>

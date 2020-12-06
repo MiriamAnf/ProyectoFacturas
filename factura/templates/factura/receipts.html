@@ -1,0 +1,33 @@
+{% extends "factura/base.html" %}
+
+{% block title %}Factura{% endblock %}
+
+{% block content %}
+
+<p><strong> He encontrado estas facturas:</strong></p><br>
+<table class="table is-striped">
+    <h1><strong>Lista de facturas</strong></h1>
+    <thead>
+        <tr>
+            <th>Número de factura</th>
+            <th>Año</th>
+            <th>Fecha de emisión</th>
+            <th>Nombre del cliente</th>
+            <th>Dirección del cliente</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for f in factura %}
+        <tr>
+            <td>{{ f.num_receipt }}</td>
+            <td>{{ f.year | date:"Y" }}</td>
+            <td>{{ f.date_of_issue | date:"d, M, Y" }}</td>
+            <td>{{ f.costumer_name }}</td>
+            <td>{{ f.costumer_address }}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock content %}
