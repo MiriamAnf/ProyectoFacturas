@@ -10,6 +10,7 @@ class ReceiptAdmin(admin.ModelAdmin):
         'costumer_name',
         'costumer_address',
         'date_of_issue',
+        'precio_total',
     )
     search_fields = ('num_receipt', 'costumer_name')
     date_hierarchy = 'date_of_issue'
