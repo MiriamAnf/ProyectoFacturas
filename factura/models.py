@@ -19,7 +19,7 @@ class Receipt(models.Model):
         default=None,
     )
 
-    def get_precio_total(self):
+    def precio_total(self):
         getcontext().prec = 6
         total = Decimal(0)
         for linereceipt in self.linereceipt_set.all():
